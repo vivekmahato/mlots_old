@@ -14,7 +14,6 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/vivekmahato/mlots',
     include_dirs=[numpy.get_include()],
-    # packages=['mlots'],
     install_requires=['numpy', 'scipy', 'scikit-learn', 'saxpy', 'editdistance'],
     packages=setuptools.find_packages(),
     classifiers=[
