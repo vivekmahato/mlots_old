@@ -1,5 +1,16 @@
 import os
 
+"""from DistMat import DistMat
+from DTW import DTW
+from Metrics import Metrics
+from WagnerFischer import WagnerFischer
+from KNN import KNN
+from Evaluation import Evaluation
+from SAX import SAX
+from TimeSeries import TimeSeries"""
+
+
+
 __author__ = 'Vivek Mahato'
 __version__ = "0.0.0.a4"
 __bibtex__ = """@misc{mlots,

@@ -6,7 +6,7 @@ with open('README.md', 'r') as file:
 
 setuptools.setup(
     name='mlots',
-    version='0.0.0.a4',
+    version='0.0.0.a5',
     author="Vivek Mahato",
     author_email="vivek.mahato@ucdconnect.ie",
     description="Machine Learning Over Time-Series: A toolkit for time-series analysis",
@@ -14,9 +14,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/vivekmahato/mlots',
     include_dirs=[numpy.get_include()],
-    packages=['mlots'],
+    # packages=['mlots'],
     install_requires=['numpy', 'scipy', 'scikit-learn', 'saxpy', 'editdistance'],
-    # packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
