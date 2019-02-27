@@ -3,11 +3,11 @@ from multiprocessing import Pool
 import numpy as np
 import pandas as pd
 
-from mlots import Metrics
+from mlots import metrics
 
 
 class DistMat:
-    def __init__(self, dic: dict, train_keys: list, test_keys: list, pool_size=1, metric="WagnerFischer"):
+    def __init__(self, dic: dict, train_keys=None, test_keys=None, pool_size=1, metric="WagnerFischer"):
         self.dic = dic
         if train_keys is not None and test_keys is not None:
             self.test_keys = test_keys
@@ -45,6 +45,6 @@ class DistMat:
             dm = pd.DataFrame(columns=cols, index=[row])
             dm[row][row] = 0
         for col in cols:
-            dist = Metrics(self.dic[row].data, self.dic[col].data, self.metric).cost
+            dist = metrics.Metrics(self.dic[row].data, self.dic[col].data, self.metric).cost
             dm[col] = dist
         return dm

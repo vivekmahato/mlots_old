@@ -3,8 +3,8 @@ from scipy.spatial.distance import cosine as cosine
 from scipy.spatial.distance import euclidean as euclidean
 from scipy.spatial.distance import jaccard as jaccard
 
-from mlots import DTW
-from mlots import WagnerFischer
+from mlots import dtw
+from mlots import wagnerfischer
 
 
 class Metrics:
@@ -19,6 +19,6 @@ class Metrics:
 
     @staticmethod
     def switcher(metric):
-        switch = {"WagnerFischer": WagnerFischer, "EditDistance": ed.eval, "DTW": DTW, "Euclidean": euclidean,
+        switch = {"WagnerFischer": wagnerfischer, "EditDistance": ed.eval, "DTW": dtw, "Euclidean": euclidean,
                   "Cosine": cosine, "Jaccard": jaccard}
         return switch[metric]

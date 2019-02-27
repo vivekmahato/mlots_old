@@ -13,10 +13,11 @@ class SAX:
         self.sax_keys = self.alphabetize()
 
     def alphabetize(self):
-        sax = sax_via_window(self.ts, win_size=self.win_size, paa_size=self.paa_size, alphabet_size=self.alphabet_size,
-                             nr_strategy=self.nr_strategy, z_threshold=self.z_threshold)
-        sax = list(sax.keys())
-        return sax
+        model = sax_via_window(self.ts, win_size=self.win_size, paa_size=self.paa_size,
+                               alphabet_size=self.alphabet_size,
+                               nr_strategy=self.nr_strategy, z_threshold=self.z_threshold)
+        model = list(model.keys())
+        return model
 
 
 if __name__ == "__main__":

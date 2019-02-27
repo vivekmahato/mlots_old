@@ -46,11 +46,11 @@ class Evaluation:
 
 
 if __name__ == "__main__":
-    orig = [1, 2, 3, 4, 5]
-    pred = [1, 1, 2, 3, 4]
-    eval = Evaluation(orig, pred)
-    print(eval.mape)
-    print(eval.mae)
-    print(eval.rmse)
-    print(eval.acc)
-    print(eval.c_mat)
+    o = [1, 2, 3, 4, 5]
+    p = [1, 1, 2, 3, 4]
+    res = Evaluation(o, p)
+    print(res.mape)
+    print(res.mae)
+    print(res.rmse)
+    print(res.acc)
+    print(res.c_mat)

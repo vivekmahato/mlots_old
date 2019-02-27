@@ -4,7 +4,7 @@ from scipy.spatial.distance import euclidean
 
 class DTW:
 
-    def __init__(self, ts_a: list, ts_b=list, d=euclidean, max_warping_window=1):
+    def __init__(self, ts_a: list, ts_b: list, d=euclidean, max_warping_window=1):
         self.ts_a = ts_a
         self.ts_b = ts_b
         self.d = d
