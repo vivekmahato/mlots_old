@@ -3,8 +3,8 @@ from scipy.spatial.distance import cosine as cosine
 from scipy.spatial.distance import euclidean as euclidean
 from scipy.spatial.distance import jaccard as jaccard
 
-from algos.DTW import DTW
-from algos.WagnerFischer import WagnerFischer
+from mlots.algos.DTW import DTW
+from mlots.algos.WagnerFischer import WagnerFischer
 
 
 class Metrics:

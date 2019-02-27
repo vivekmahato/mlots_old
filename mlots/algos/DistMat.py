@@ -3,7 +3,7 @@ from multiprocessing import Pool
 import numpy as np
 import pandas as pd
 
-from algos.Metrics import Metrics
+from mlots.algos.Metrics import Metrics
 
 
 class DistMat:
