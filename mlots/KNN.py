@@ -1,9 +1,9 @@
 import random
 
-from TimeSeries import TimeSeries
 from scipy.stats import mode
 
 from mlots import DistMat
+from mlots import TimeSeries
 
 
 class KNN:
