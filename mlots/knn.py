@@ -42,11 +42,10 @@ if __name__ == "__main__":
     for i in range(10):
         data = [random.randrange(1, 101, 1) for _ in range(10)]
         # data = [["abc", "bcd", "fgh"], ["aac", "bdd", "ffh"], ["acc", "ccd", "ggh"]]
-        dic = {"data": data, "label": random.randint(1, 2)}
-        ts = timeseries.TimeSeries(dic)
+        ts = timeseries.TimeSeries(data, random.randint(1, 2))
         test_dic[i] = ts
     keys = list(test_dic.keys())
-    d_mat = distmat.DistMat(dic=test_dic, train_keys=None, test_keys=None, pool_size=2, metric="EditDistance").dist_mat
+    d_mat = distmat.DistMat(dic=test_dic, train_keys=None, test_keys=None, pool_size=2, metric="Euclidean").dist_mat
     knn = KNN(dic=test_dic, rows=keys[:4], cols=keys[4:], dist_mat=d_mat)
     print(d_mat)
     print(knn.orig)
