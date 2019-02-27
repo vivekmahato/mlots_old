@@ -3,7 +3,7 @@ import random
 from TimeSeries import TimeSeries
 from scipy.stats import mode
 
-from mlots.algos.DistMat import DistMat
+from mlots import DistMat
 
 
 class KNN:
