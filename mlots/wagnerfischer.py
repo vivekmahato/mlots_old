@@ -180,10 +180,3 @@ class WagnerFischer(object):
         # Averages over all paths.
         return collections.Counter({o: c / npaths for (o, c) in opcounts.items()})
 
-
-if __name__ == "__main__":
-    a = "coat"
-    b = "goat"
-    d = WagnerFischer
-    dist = d(a, b).cost
-    print(dist)
