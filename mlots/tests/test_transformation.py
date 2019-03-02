@@ -22,12 +22,13 @@ class TestMetrics(unittest.TestCase):
         dic = TransformData(data, labels).transformed_data
         self.transformed_data = Transformation(dic, method="sax", win_size=5, paa_size=6, alphabet_size=5,
                                                nr_strategy=True, z_threshold=True).transformed
-        self.assertEqual(self.transformed_data[0], ['eddcaa', 'decaad', 'ecbcda', 'bbddbe', 'adbbde'], "SAX Failed!")
+        self.assertEqual(self.transformed_data[0].data, ['eddcaa', 'decaad', 'ecbcda', 'bbddbe', 'adbbde'],
+                         "SAX Failed!")
 
     def test_sfa(self):
         dic = TransformData(data, labels).transformed_data
         self.transformed_data = Transformation(dic, histogram_type="EQUI_DEPTH", method="sfa", win_size=5,
                                                word_length=6, alphabet_size=5,
                                                norm_mean=True, lower_bound=True).transformed
-        self.assertEqual(self.transformed_data[0], ['decbbb', 'ebbabb', 'cacbbb', 'bababb', 'baabbb', 'aacabb'],
+        self.assertEqual(self.transformed_data[0].data, ['decbbb', 'ebbabb', 'cacbbb', 'bababb', 'baabbb', 'aacabb'],
                          "SFA Failed!")
