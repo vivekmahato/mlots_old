@@ -14,8 +14,8 @@ class DistMat:
             self.train_keys = train_keys
             self.flag = False
         elif train_keys is None:
-            self.test_keys = list(self.dic.keys())
-            self.train_keys = list(self.dic.keys())
+            self.test_keys = dic["Keys"]
+            self.train_keys = dic["Keys"]
             self.flag = True
         self.pool_size = pool_size
         self.metric = metric

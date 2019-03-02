@@ -18,9 +18,3 @@ class SAX:
                                nr_strategy=self.nr_strategy, z_threshold=self.z_threshold)
         model = list(model.keys())
         return model
-
-
-if __name__ == "__main__":
-    l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 1, 2, 3, 4, 5]
-    keys = SAX(l).sax_keys
-    print(keys)

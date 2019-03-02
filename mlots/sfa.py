@@ -1,5 +1,3 @@
-import random
-
 import pandas as pd
 
 from mlots.mft import *
@@ -28,15 +26,6 @@ def sfa2wordlist(wordList):
     return list_string
 
 
-def alphabetize(dic: dict):
-    t_dic = dic.copy()
-    for idx in range(t_dic["Samples"]):
-        word_list = sfa.transform_windowing(t_dic[idx])
-        sym = sfa2wordlist(word_list)
-        t_dic[idx] = sym
-    return t_dic
-
-
 class SFA:
 
     def __init__(self, histogram_type="EQUI_DEPTH", sup=False, lb=True, mb=False):
@@ -60,6 +49,13 @@ class SFA:
 
     def printBins(self):
         print(self.bins)
+
+    def alphabetize(self, dic: dict):
+        for idx in range(dic["Samples"]):
+            word_list = self.transform_windowing(dic[idx])
+            sym = sfa2wordlist(word_list)
+            dic[idx].data = sym
+        return dic
 
     def mv_fitWindowing(self, samples, window_size, word_length, symbols, norm_mean, lower_bounding):
         sa = {}
@@ -430,20 +426,3 @@ class SFA:
                     b += 1
             signal[a] = b - 1
         return signal
-
-
-if __name__ == "__main__":
-    test_data = {}
-    lbls = []
-    for i in range(10):
-        nums = random.sample(range(1, 100), 10)
-        lbl = random.choice([1, 2])
-        lbls.append(lbl)
-        test_data[i] = TimeSeries(nums, lbl)
-    test_data["Samples"] = len(test_data)
-    test_data["Size"] = len(test_data[0].data)
-    test_data["Labels"] = lbls
-    sfa = SFA("EQUI_DEPTH")
-    sfa.fitWindowing(test_data, window_size=6, word_length=6, symbols=5, norm_mean=True, lower_bounding=True)
-    symdic = alphabetize(test_data)
-    print(symdic)
